@@ -1,7 +1,7 @@
 import streamlit as st
 
 import streamlit as st
-from openai import OpenAI
+import openai
 import os
 from dotenv import load_dotenv
 
@@ -62,7 +62,7 @@ def generate_tagline(business_info):
     Returns:
         str: Generated tagline
     """
-    client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+    client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
     
     prompt = f"""Generate a compelling business tagline for the following business:
     
